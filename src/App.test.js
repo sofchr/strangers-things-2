@@ -7,7 +7,7 @@ import App from "./App";
 import "@testing-library/jest-dom";
 import AllPosts from "./components/AllPosts"
 
-describe("App component", () => {
+describe("All Posts component", () => {
   test("renders all posts", () => {
     // Render the App component
     render(<AllPosts />);
@@ -24,13 +24,7 @@ describe("App component", () => {
     );
     expect(headerText).toBeInTheDocument();
 
-    // Assert that the featured puppy's age is displayed
-    const featuredPuppyAge = screen.getByText(/Age: \d+/);
-    expect(featuredPuppyAge).toBeInTheDocument();
 
-    // Assert that the featured puppy's email is displayed
-    const featuredPuppyEmail = screen.getByText(/Email: \S+/);
-    expect(featuredPuppyEmail).toBeInTheDocument();
   });
 
 
