@@ -1,39 +1,52 @@
-import { puppyList } from "./data";
+import { fetchAllPosts } from "./API";
 import { useState } from "react";
+import AllPosts from "./components/AllPosts";
+import { useEffect } from "react";
 
-import "./App.css";
-
-function App() {
-  const [puppies, setPuppies] = useState(puppyList);
-  const [featPupId, setFeatPupId] = useState(null);
-  const featuredPup = puppies.find((pup) => pup.id === featPupId);
-  console.log("featuredPup: ", featuredPup);
+export default function App() {
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    fetchAllPosts().then((res) => {
+      setPosts(res.data.posts);
+    });
+  }, []);
   return (
-    <div className="App">
-      {featPupId && (
-        <div>
-          <h2>{featuredPup.name}</h2>
-          <ul>
-            <li>Age: {featuredPup.age}</li>
-            <li>Email: {featuredPup.email}</li>
-          </ul>
-        </div>
-      )}
-
-      {puppies.map((puppy) => {
-        return (
-          <p
-            onClick={() => {
-              setFeatPupId(puppy.id);
-            }}
-            key={puppy.id}
-          >
-            {puppy.name}
-          </p>
-        );
-      })}
+    <div>
+      Hi
+      <AllPosts posts={posts} />
     </div>
   );
 }
 
-export default App;
+// export default function AllPlayers({ players }) {
+//   const navigate = useNavigate();
+
+//   return (
+//     <h1>
+//       {players.map((player) => {
+//         return (
+//           <>
+//             <div key={player.id}>
+//               <h2>{player.name}</h2>
+//               <p>{player.id}</p>
+//               <p>{player.breed}</p>
+
+//               <img src={player.imageUrl} alt={player.name} />
+//               <br />
+//               <button
+//                 key={player.id}
+//                 onClick={() => navigate(`players/${player.id}`)}
+//               >
+//                 See Pup Details
+//               </button>
+//             </div>
+
+//             <div>
+//               <h2>{player.name}</h2>
+//             </div>
+//           </>
+//         );
+//       })}
+//     </h1>
+//   );
+// }
