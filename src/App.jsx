@@ -2,17 +2,19 @@ import { fetchAllPosts } from "./API";
 import { useState } from "react";
 import AllPosts from "./components/AllPosts";
 import { useEffect } from "react";
+// import NavContainer from "./components/NavContainer";
 
 export default function App() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetchAllPosts().then((res) => {
-      setPosts(res.data.posts);
+    fetchAllPosts().then((response) => {
+      setPosts(response.data.posts);
     });
   }, []);
   return (
     <div>
-      Hi
+      {/* <NavContainer /> */}
+      <h1>Strangers' Things</h1>
       <AllPosts posts={posts} />
     </div>
   );
