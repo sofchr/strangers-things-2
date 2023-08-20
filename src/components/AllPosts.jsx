@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { makePost } from "../API";
 import SignUpForm from "./SignUpForm";
 import { useState } from "react";
+import LoginForm from "./LoginForm";
 
 export default function AllPosts({ posts }) {
   const [token, setToken] = useState(null);
@@ -18,6 +19,7 @@ export default function AllPosts({ posts }) {
   return (
     <div>
       <SignUpForm token={token} setToken={setToken} />
+      <LoginForm token={token} setToken={setToken} />
       {token == null ? null : (
         <button onClick={() => makePost(post1, token)}>Click me</button>
       )}
