@@ -7,15 +7,7 @@ import NewPost from "./NewPost";
 
 export default function AllPosts({ posts, setPosts }) {
   const [token, setToken] = useState(null);
-  // const [post, setPost] = useState();
-  const navigate = useNavigate();
-  // const post1 = {
-  //   title: "Blender",
-  //   description: "still works, barely used",
-  //   price: "$20",
-  //   location: "",
-  //   willDeliver: false,
-  // };
+  // const navigate = useNavigate();
 
   return (
     <div>

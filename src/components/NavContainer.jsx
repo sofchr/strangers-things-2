@@ -10,8 +10,8 @@ export default function NavContainer() {
       {/* // <div id="nav-section">
     //   <Routes>
     //     <Route path="/" element={AllPosts()} />
-    //     <Route path="/messages" element={Messages()} />
-    //     <Route path="/logout" element={Login()} />
+    //     <Route path="/login" element={LoginForm()} />
+    //     <Route path="/signup" element={SignUpForm()} />
     //   </Routes>
     // </div> */}
     </>

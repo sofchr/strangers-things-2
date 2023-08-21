@@ -5,8 +5,6 @@ export default function LoginForm(props) {
   const { token, setToken } = props;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  //new state for when someone inputs their username
-  //   const [newUsername, setNewUsername] = useState(null);
   const [error, setError] = useState(null);
 
   async function handleSubmit(event) {
@@ -37,8 +35,6 @@ export default function LoginForm(props) {
   }
   return (
     <>
-      {/* display new username below*/}
-      {/* {newUsername && <p>Welcome, {newUsername}!</p>} */}
       <h2>Log in!</h2>
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>

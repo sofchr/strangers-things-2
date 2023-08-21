@@ -1,7 +1,3 @@
-// export default function NewPost() {
-//   return <h1>I'm a form to post new things</h1>;
-// }
-
 import React, { useState } from "react";
 import { makePost } from "../API/index";
 
@@ -28,7 +24,7 @@ export default function NewPost({ posts, setPosts, token }) {
     if (response.success) {
       console.log("New Post: ", response.data.posts.newListing);
 
-      // Resetting all players manually
+      // Resetting all posts manually
       const newPostsList = [...posts, response.data.posts.newListing];
       setPosts(newPostsList);
 
