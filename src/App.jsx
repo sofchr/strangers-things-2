@@ -15,7 +15,7 @@ export default function App() {
     <div>
       {/* <NavContainer /> */}
       <h1>Strangers' Things</h1>
-      <AllPosts posts={posts} />
+      <AllPosts posts={posts} setPosts={setPosts} />
     </div>
   );
 }

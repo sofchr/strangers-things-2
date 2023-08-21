@@ -5,22 +5,25 @@
 import React, { useState } from "react";
 import { makePost } from "../API/index";
 
-export default function NewPost({ posts, setPosts }) {
+export default function NewPost({ posts, setPosts, token }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
-  const [delivery, setDelivery] = useState(null);
+  const [delivery, setDelivery] = useState(false);
   const [error, setError] = useState(null);
 
   async function handleSubmit(e) {
     e.preventDefault();
     const response = await makePost(
-      title,
-      description,
-      price,
-      location,
-      delivery
+      {
+        title: title,
+        description: description,
+        price: price,
+        location: location,
+        delivery: delivery,
+      },
+      token
     );
     if (response.success) {
       console.log("New Post: ", response.data.posts.newListing);
