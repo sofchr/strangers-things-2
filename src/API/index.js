@@ -11,22 +11,7 @@ export async function fetchAllPosts() {
     }
 }
 
-// async function deletePost() {
-//     try {
-//         const response = await fetch(`${BASE_URL}/posts/${_id}`, {
-//             method: "DELETE",
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 'Authorization': `Bearer ${TOKEN_STRING_HERE}`
-//             }
-//         });
-//         const result = await response.json();
-//         console.log(result);
-//         return result
-//     } catch (err) {
-//         console.error(err);
-//     }
-// }
+
 
 export const makePost = async (post, token) => {
 
@@ -50,5 +35,19 @@ export const makePost = async (post, token) => {
 }
 
 
-
-
+export async function deletePost(token, _id) {
+    try {
+        const response = await fetch(`${BASE_URL}/posts/${_id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        const result = await response.json();
+        console.log(result);
+        return result
+    } catch (err) {
+        console.error(err);
+    }
+}
