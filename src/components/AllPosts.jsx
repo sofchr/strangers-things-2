@@ -1,18 +1,19 @@
 import { useNavigate } from "react-router-dom";
-// import CreatePlayerForm from "./NewPlayerForm";
 import { makePost } from "../API";
 import SignUpForm from "./SignUpForm";
 import { useState } from "react";
 import LoginForm from "./LoginForm";
+import NewPost from "./NewPost";
 
 export default function AllPosts({ posts }) {
   const [token, setToken] = useState(null);
-  // const navigate = useNavigate();
+  // const [post, setPost] = useState();
+  const navigate = useNavigate();
   const post1 = {
-    title: "Car",
-    description: "clunker",
-    price: "$250",
-    location: "tbd",
+    title: "Blender",
+    description: "still works, barely used",
+    price: "$20",
+    location: "",
     willDeliver: false,
   };
 
@@ -20,6 +21,7 @@ export default function AllPosts({ posts }) {
     <div>
       <SignUpForm token={token} setToken={setToken} />
       <LoginForm token={token} setToken={setToken} />
+      <NewPost token={token} setToken={setToken} />
       {token == null ? null : (
         <button onClick={() => makePost(post1, token)}>Click me</button>
       )}
