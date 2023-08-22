@@ -14,10 +14,8 @@ export default function AllPosts({ posts, setPosts }) {
     <div>
       <SignUpForm token={token} setToken={setToken} />
       <LoginForm token={token} setToken={setToken} />
+      {token == null ? null : <h2>You're logged in!</h2>}
       <NewPost token={token} posts={posts} setPosts={setPosts} />
-      {token == null ? null : (
-        <button onClick={() => makePost(posts, token)}>Click me</button>
-      )}
       {posts.map((post) => {
         return (
           <div className="single-post" key={post._id}>

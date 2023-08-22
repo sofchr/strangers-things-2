@@ -1,3 +1,4 @@
-Craiglist knockoff
+Craiglist knockoff project
 
-Add link for netlify render here
+link for netlify deploy here:
+https://grand-dasik-7b87a9.netlify.app/
