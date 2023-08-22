@@ -3,7 +3,7 @@
  */
 
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+// import App from "./App";
 import "@testing-library/jest-dom";
 import AllPosts from "./components/AllPosts"
 
@@ -20,5 +20,4 @@ describe("All Posts component", () => {
   });
 
 
-  //test below for API call
 });

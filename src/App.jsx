@@ -13,7 +13,7 @@ export default function App() {
     });
   }, []);
   return (
-    <div>
+    <div className="main-headers">
       <Nav></Nav>
       <h1>Strangers' Things</h1>
       <AllPosts posts={posts} setPosts={setPosts} />

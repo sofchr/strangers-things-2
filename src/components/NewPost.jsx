@@ -39,37 +39,43 @@ export default function NewPost({ posts, setPosts, token }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      {error && <p>{error}</p>}
-      <input
-        value={title}
-        type="text"
-        name="title"
-        placeholder="title"
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <input
-        value={description}
-        type="text"
-        name="description"
-        placeholder="description"
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <input
-        value={price}
-        type="text"
-        name="price"
-        placeholder="price"
-        onChange={(e) => setPrice(e.target.value)}
-      />
-      <input
-        value={location}
-        type="text"
-        name="location"
-        placeholder="location"
-        onChange={(e) => setLocation(e.target.value)}
-      />
-      <button>Submit</button>
-    </form>
+    <div className="submit-form">
+      <form onSubmit={handleSubmit}>
+        {error && <p>{error}</p>}
+        <input
+          value={title}
+          type="text"
+          name="title"
+          placeholder="item name"
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <br />
+        <input
+          value={description}
+          type="text"
+          name="description"
+          placeholder="description"
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <br />
+        <input
+          value={price}
+          type="text"
+          name="price"
+          placeholder="price"
+          onChange={(e) => setPrice(e.target.value)}
+        />
+        <br />
+        <input
+          value={location}
+          type="text"
+          name="location"
+          placeholder="location"
+          onChange={(e) => setLocation(e.target.value)}
+        />
+        <br />
+        <button>Submit</button>
+      </form>
+    </div>
   );
 }
